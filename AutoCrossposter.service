@@ -1,0 +1,14 @@
+[Unit]
+Description=AutoCrossposter-Bot
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+WorkingDirectory=/root/AutoCrossposter
+ExecStart=node index.js
+
+[Install]
+WantedBy=multi-user.target
