@@ -1,10 +1,12 @@
-require("dotenv").config();
-const {
+import "dotenv/config";
+import {
   Client,
+  Events,
   GatewayIntentBits,
   Partials,
   ChannelType,
-} = require("discord.js");
+} from "discord.js";
+
 const mySecret = process.env["TOKEN"]; // Discord Token
 const client = new Client({
   intents: [
@@ -22,11 +24,11 @@ const client = new Client({
   ],
 }); // Discord Object
 
-client.on("ready", () => {
+client.on(Events.ClientReady, () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("messageCreate", (message) => {
+client.on(Events.MessageCreate, (message) => {
   //console.log(`${message.content}: ${message.channel.type}`);
   if (
     message.channel.type == ChannelType.GuildNews ||
