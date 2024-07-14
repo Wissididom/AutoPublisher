@@ -7,14 +7,9 @@ import {
   ChannelType,
 } from "discord.js";
 
-const mySecret = process.env["TOKEN"]; // Discord Token
+const mySecret = process.env.TOKEN; // Discord Token
 const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.MessageContent,
-  ],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
   partials: [
     Partials.User,
     Partials.Channel,
