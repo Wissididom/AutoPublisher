@@ -1,5 +1,5 @@
 [Unit]
-Description=AutoCrossposter-Bot
+Description=AutoPublisher-Bot
 After=network.target
 StartLimitIntervalSec=0
 
@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-WorkingDirectory=/root/AutoCrossposter
+WorkingDirectory=/root/AutoPublisher
 ExecStart=node index.js
 
 [Install]
