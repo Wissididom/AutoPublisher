@@ -1,13 +1,12 @@
-import "dotenv/config";
 import {
+  ChannelType,
   Client,
   Events,
   GatewayIntentBits,
   Partials,
-  ChannelType,
 } from "discord.js";
 
-const mySecret = process.env.TOKEN; // Discord Token
+const mySecret = Deno.env.get("TOKEN"); // Discord Token
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
   partials: [
@@ -20,7 +19,7 @@ const client = new Client({
 }); // Discord Object
 
 client.on(Events.ClientReady, () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user?.tag}!`);
 });
 
 client.on(Events.MessageCreate, (message) => {
