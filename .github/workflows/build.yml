@@ -50,7 +50,7 @@ jobs:
         name: Checkout Code
 
       # Windows
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         name: Download Windows
         with:
           name: AutoPublisher-windows-latest
@@ -59,7 +59,7 @@ jobs:
       - name: Rename Windows Binary
         run: mv release-artifacts/AutoPublisher.exe release-artifacts/AutoPublisher-Windows.exe
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         name: Download Linux
         with:
           name: AutoPublisher-ubuntu-latest
@@ -68,7 +68,7 @@ jobs:
       - name: Rename Linux Binary
         run: mv release-artifacts/AutoPublisher release-artifacts/AutoPublisher-Linux
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         name: Download Mac
         with:
           name: AutoPublisher-macos-latest
